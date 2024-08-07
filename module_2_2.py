@@ -10,10 +10,4 @@ elif first==second or first==third  or second==third:
 else:
     print('равных числе нет')
 
-# Вариант 2
-if first==second==third:
-    print('все числа равны')
-elif first!=second!=third or first!=third:
-    print('равных числе нет')
-else:
-    print('два числа равны')
+
