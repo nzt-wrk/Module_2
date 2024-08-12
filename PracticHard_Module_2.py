@@ -15,22 +15,26 @@ def Password_num(n):
 def input_int():
     while True:
         s = input('Введите число от 3 до 20: ')
-        try:
-            return int(s)
-                # if s < 3 or s > 20:
-                #     print('Ошибка. Ведено не допустимое значение!')
-                # else:
-                #     return s
-        except ValueError:
-            print('Ошибка. Ведено не допустимое значение!')
+        s = s.capitalize()
+        if s == "Stop":
+            return s
+            break
+        else:
+            try:
+                return int(s)
+            except ValueError:
+                print('Ошибка. Ведено не допустимое значение!')
 
-n = input_int()
-while n < 3 or n > 20:
-    print('Ошибка. Число должно быть в диапазоне от 3 до 20!')
+while True:
     n = input_int()
-else:
-    password, cnt = Password_num(n)
-    print('----------------------------------')
-    print(f'Пароль для числа {n}: {password}')
-    print()
-    print(f'Кол-во переборов по циклам: {cnt}')
+    if n == "Stop":
+        break
+    while n < 3 or n > 20:
+        print('Ошибка. Число должно быть в диапазоне от 3 до 20!')
+        n = input_int()
+    else:
+        password, cnt = Password_num(n)
+        print('----------------------------------')
+        print(f'Пароль для числа {n}: {password}')
+        print(f'Кол-во переборов по циклам: {cnt}')
+        print('Введите "Stop" для остановки программы или введите новое число')
