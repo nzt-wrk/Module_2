@@ -10,7 +10,7 @@ def Password_num(n):
             cnt += 1  # Счетчик переборов по циклам (не обязателен для работы программы)
             if n % (i + j) == 0:
                 result = result + str(i) + str(j)
-        return result, cnt
+    return result, cnt
 
 def input_int():
     while True:
